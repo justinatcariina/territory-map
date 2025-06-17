@@ -1,0 +1,359 @@
+{
+  "AL": {
+    "calls": 159,
+    "connects": 5,
+    "customers": 0,
+    "discos": 0,
+    "score": 1.5
+  },
+  "AR": {
+    "calls": 169,
+    "connects": 8,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.4
+  },
+  "AZ": {
+    "calls": 2022,
+    "connects": 72,
+    "customers": 1,
+    "discos": 3,
+    "score": 24.4
+  },
+  "CA": {
+    "calls": 2119,
+    "connects": 83,
+    "customers": 4,
+    "discos": 2,
+    "score": 30.1
+  },
+  "CENTRAL NY": {
+    "calls": 11,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.3
+  },
+  "CO": {
+    "calls": 1209,
+    "connects": 40,
+    "customers": 0,
+    "discos": 0,
+    "score": 12.0
+  },
+  "CT": {
+    "calls": 101,
+    "connects": 5,
+    "customers": 0,
+    "discos": 0,
+    "score": 1.5
+  },
+  "DC": {
+    "calls": 195,
+    "connects": 7,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.1
+  },
+  "DE": {
+    "calls": 278,
+    "connects": 3,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.9
+  },
+  "FL": {
+    "calls": 787,
+    "connects": 34,
+    "customers": 0,
+    "discos": 0,
+    "score": 10.2
+  },
+  "GA": {
+    "calls": 760,
+    "connects": 38,
+    "customers": 0,
+    "discos": 3,
+    "score": 13.2
+  },
+  "HI": {
+    "calls": 87,
+    "connects": 8,
+    "customers": 2,
+    "discos": 0,
+    "score": 4.4
+  },
+  "IA": {
+    "calls": 8,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "ID": {
+    "calls": 401,
+    "connects": 14,
+    "customers": 3,
+    "discos": 1,
+    "score": 7.8
+  },
+  "IL": {
+    "calls": 277,
+    "connects": 8,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.4
+  },
+  "IN": {
+    "calls": 117,
+    "connects": 8,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.4
+  },
+  "KS": {
+    "calls": 392,
+    "connects": 36,
+    "customers": 0,
+    "discos": 3,
+    "score": 12.6
+  },
+  "LA": {
+    "calls": 441,
+    "connects": 23,
+    "customers": 1,
+    "discos": 0,
+    "score": 7.9
+  },
+  "MA": {
+    "calls": 431,
+    "connects": 13,
+    "customers": 0,
+    "discos": 1,
+    "score": 4.5
+  },
+  "MASSACHUSETTS": {
+    "calls": 6,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "MD": {
+    "calls": 206,
+    "connects": 12,
+    "customers": 0,
+    "discos": 1,
+    "score": 4.2
+  },
+  "ME": {
+    "calls": 87,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.3
+  },
+  "MI": {
+    "calls": 1047,
+    "connects": 60,
+    "customers": 0,
+    "discos": 16,
+    "score": 27.6
+  },
+  "MN": {
+    "calls": 652,
+    "connects": 35,
+    "customers": 1,
+    "discos": 2,
+    "score": 12.7
+  },
+  "MO": {
+    "calls": 186,
+    "connects": 5,
+    "customers": 0,
+    "discos": 0,
+    "score": 1.5
+  },
+  "MS": {
+    "calls": 13,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "MT": {
+    "calls": 11,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.3
+  },
+  "NC": {
+    "calls": 597,
+    "connects": 28,
+    "customers": 0,
+    "discos": 1,
+    "score": 9.0
+  },
+  "NH": {
+    "calls": 155,
+    "connects": 14,
+    "customers": 1,
+    "discos": 0,
+    "score": 5.2
+  },
+  "NJ": {
+    "calls": 434,
+    "connects": 15,
+    "customers": 1,
+    "discos": 0,
+    "score": 5.5
+  },
+  "NM": {
+    "calls": 1501,
+    "connects": 70,
+    "customers": 8,
+    "discos": 4,
+    "score": 31.4
+  },
+  "NV": {
+    "calls": 262,
+    "connects": 9,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.7
+  },
+  "NY": {
+    "calls": 1500,
+    "connects": 64,
+    "customers": 1,
+    "discos": 0,
+    "score": 20.2
+  },
+  "OH": {
+    "calls": 279,
+    "connects": 9,
+    "customers": 0,
+    "discos": 0,
+    "score": 2.7
+  },
+  "OK": {
+    "calls": 199,
+    "connects": 14,
+    "customers": 0,
+    "discos": 1,
+    "score": 4.8
+  },
+  "OR": {
+    "calls": 703,
+    "connects": 44,
+    "customers": 0,
+    "discos": 5,
+    "score": 16.2
+  },
+  "PA": {
+    "calls": 1125,
+    "connects": 33,
+    "customers": 0,
+    "discos": 1,
+    "score": 10.5
+  },
+  "PENNSYLVANIA": {
+    "calls": 6,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "RI": {
+    "calls": 197,
+    "connects": 16,
+    "customers": 0,
+    "discos": 0,
+    "score": 4.8
+  },
+  "SC": {
+    "calls": 466,
+    "connects": 22,
+    "customers": 0,
+    "discos": 0,
+    "score": 6.6
+  },
+  "TN": {
+    "calls": 574,
+    "connects": 17,
+    "customers": 1,
+    "discos": 1,
+    "score": 6.7
+  },
+  "TX": {
+    "calls": 6506,
+    "connects": 221,
+    "customers": 4,
+    "discos": 21,
+    "score": 82.9
+  },
+  "UT": {
+    "calls": 256,
+    "connects": 11,
+    "customers": 0,
+    "discos": 0,
+    "score": 3.3
+  },
+  "VA": {
+    "calls": 51,
+    "connects": 2,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.6
+  },
+  "WA": {
+    "calls": 145,
+    "connects": 8,
+    "customers": 0,
+    "discos": 1,
+    "score": 3.0
+  },
+  "WASHINGTON D.C.": {
+    "calls": 7,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "WI": {
+    "calls": 186,
+    "connects": 5,
+    "customers": 1,
+    "discos": 0,
+    "score": 2.5
+  },
+  "WV": {
+    "calls": 9,
+    "connects": 2,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.6
+  },
+  "WY": {
+    "calls": 28,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.0
+  },
+  "(NO VALUE)": {
+    "calls": 263,
+    "connects": 15,
+    "customers": 0,
+    "discos": 3,
+    "score": 6.3
+  },
+  "SAN JUAN": {
+    "calls": 0,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "score": 0.3
+  }
+}
