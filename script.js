@@ -47,8 +47,8 @@ Promise.all([
     })
     .attr("stroke", "#fff")
     .on("mouseover", function (event, d) {
-      const code = d.properties.code;
-      const m = metrics[code];
+      const fips = d.id.padStart(2, "0");
+      const code = fipsToState[fips];
       if (!m) return;
       tooltip.style("display", "block")
         .html(`<strong>${code}</strong><br>Calls: ${m.calls}<br>Connects: ${m.connects}<br>Discos: ${m.discos}<br>Customers: ${m.customers}<br>Score: ${m.score}`)
