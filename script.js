@@ -56,15 +56,16 @@ Promise.all([
       const m = metrics[code];
       if (!m) return;
 
+      const safeRate = (num, denom) => denom ? (num / denom * 100).toFixed(1) + "%" : "N/A";
+
       tooltip.style("display", "block")
-        .html(`
+      .html(`
           <strong>${code}</strong><br>
-          Calls: ${m.calls}<br>
-          Connects: ${m.connects}<br>
-          Discos: ${m.discos}<br>
-          Customers: ${m.customers}<br>
+          Connect Rate: ${safeRate(m.connects, m.calls)}<br>
+          Book Rate: ${safeRate(m.discos, m.connects)}<br>
+          Close Rate: ${safeRate(m.customers, m.discos)}<br>
           Score: ${m.score}
-        `)
+      `)
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 40) + "px");
     })
