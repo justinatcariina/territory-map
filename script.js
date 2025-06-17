@@ -18,39 +18,36 @@ const fipsToState = {
   "50": "VT", "51": "VA", "53": "WA", "54": "WV", "55": "WI", "56": "WY"
 };
 
-
-
-// With this:
-const stateCode = fipsToState[d.id];
-const stateMetric = metrics[stateCode];
-
 Promise.all([
   d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json"),
   d3.json("state_metrics.json")
 ]).then(([us, metrics]) => {
-  const states = topojson.feature(us, us.objects.states);
+  const states = topojson.feature(us, us.objects.states).features;
 
   const projection = d3.geoAlbersUsa().scale(1000).translate([480, 300]);
   const path = d3.geoPath().projection(projection);
+
   console.log("Loaded metrics:", metrics);
+
   svg.append("g")
     .selectAll("path")
-    .data(states.features)
+    .data(states)
     .join("path")
     .attr("d", path)
     .attr("fill", d => {
-      const fips = d.id.padStart(2, "0");
+      const fips = d.id.toString().padStart(2, "0");
       const stateCode = fipsToState[fips];
       const m = metrics[stateCode];
       console.log("FIPS:", fips, "→", stateCode, "| Metric:", m);
       return m ? colorScale(m.score) : "#eee";
     })
     .attr("stroke", "#fff")
-    .on("mouseover", function (event, d) {
-      const fips = d.id.padStart(2, "0");
+    .on("mouseover", function(event, d) {
+      const fips = d.id.toString().padStart(2, "0");
       const code = fipsToState[fips];
-      const m = metrics[code];  // ← this was missing
+      const m = metrics[code];
       if (!m) return;
+
       tooltip.style("display", "block")
         .html(`<strong>${code}</strong><br>Calls: ${m.calls}<br>Connects: ${m.connects}<br>Discos: ${m.discos}<br>Customers: ${m.customers}<br>Score: ${m.score}`)
         .style("left", (event.pageX + 10) + "px")
