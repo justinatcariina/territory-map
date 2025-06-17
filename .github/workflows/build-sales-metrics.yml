@@ -1,0 +1,36 @@
+name: Build Sales Metrics
+
+on:
+  push:
+    paths:
+      - 'data/**'           # triggers only when files in data/ change
+      - 'build_sales_metrics.py'  # or when you modify the script itself
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run metrics build script
+      run: python build_sales_metrics.py
+
+    - name: Commit and push updated JSON
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add state_metrics.json
+        # Only commit if state_metrics.json changed
+        git diff --cached --quiet || (git commit -m "Update state metrics from latest data" && git push)
