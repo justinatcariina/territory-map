@@ -32,16 +32,18 @@ Promise.all([
 
   const projection = d3.geoAlbersUsa().scale(1000).translate([480, 300]);
   const path = d3.geoPath().projection(projection);
-
+  console.log("Loaded metrics:", metrics);
   svg.append("g")
     .selectAll("path")
     .data(states.features)
     .join("path")
     .attr("d", path)
     .attr("fill", d => {
-      const stateCode = d.properties.code;
-      const stateMetric = metrics[stateCode];
-      return stateMetric ? colorScale(stateMetric.score) : "#eee";
+      const fips = d.id.padStart(2, "0");
+      const stateCode = fipsToState[fips];
+      const m = metrics[stateCode];
+      console.log("FIPS:", fips, "→", stateCode, "| Metric:", m);
+      return m ? colorScale(m.score) : "#eee";
     })
     .attr("stroke", "#fff")
     .on("mouseover", function (event, d) {
