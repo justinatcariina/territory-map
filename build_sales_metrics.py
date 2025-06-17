@@ -49,7 +49,13 @@ for s, d in state_metrics.items():
     w_deal = 0.1
 
     score = (connect_rate * w_connect) + (book_rate * w_book) + (deal_rate * w_deal)
-    d["score"] = round(score, 3)
+    d["score_raw"] = round(score, 3)
+
+# Normalize scores to range 0–1
+max_score = max(d["score_raw"] for d in state_metrics.values())
+for d in state_metrics.values():
+    d["score"] = round(d["score_raw"] / max_score, 4)
+    del d["score_raw"]
 
 with open("state_metrics.json", "w") as f:
     json.dump(state_metrics, f, indent=2)
