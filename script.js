@@ -1,9 +1,20 @@
 const svg = d3.select("#map");
 const tooltip = d3.select("#tooltip");
 
+// Use a sequential color scale for smooth gradient
 const colorScale = d3.scaleThreshold()
-  .domain([1, 5, 10])
-  .range(["#ccc", "yellow", "orange", "red"]);
+  .domain([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8])
+  .range([
+    "#f7fbff",
+    "#deebf7",
+    "#c6dbef",
+    "#9ecae1",
+    "#6baed6",
+    "#4292c6",
+    "#2171b5",
+    "#084594",
+    "#08306b"
+  ]);
 
 const fipsToState = {
   "01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA",
@@ -27,8 +38,6 @@ Promise.all([
   const projection = d3.geoAlbersUsa().scale(1000).translate([480, 300]);
   const path = d3.geoPath().projection(projection);
 
-  console.log("Loaded metrics:", metrics);
-
   svg.append("g")
     .selectAll("path")
     .data(states)
@@ -38,18 +47,24 @@ Promise.all([
       const fips = d.id.toString().padStart(2, "0");
       const stateCode = fipsToState[fips];
       const m = metrics[stateCode];
-      console.log("FIPS:", fips, "→", stateCode, "| Metric:", m);
       return m ? colorScale(m.score) : "#eee";
     })
     .attr("stroke", "#fff")
-    .on("mouseover", function(event, d) {
+    .on("mouseover", (event, d) => {
       const fips = d.id.toString().padStart(2, "0");
       const code = fipsToState[fips];
       const m = metrics[code];
       if (!m) return;
 
       tooltip.style("display", "block")
-        .html(`<strong>${code}</strong><br>Calls: ${m.calls}<br>Connects: ${m.connects}<br>Discos: ${m.discos}<br>Customers: ${m.customers}<br>Score: ${m.score}`)
+        .html(`
+          <strong>${code}</strong><br>
+          Calls: ${m.calls}<br>
+          Connects: ${m.connects}<br>
+          Discos: ${m.discos}<br>
+          Customers: ${m.customers}<br>
+          Score: ${m.score}
+        `)
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 40) + "px");
     })
