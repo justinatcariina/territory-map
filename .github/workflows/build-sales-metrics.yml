@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'data/**'
-      - 'scripts/build_metrics.py'
+      - 'build_metrics.py'
       - '.github/workflows/build_metrics.yml'
 
 jobs:
