@@ -32,5 +32,6 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add state_metrics.json
-        # Only commit if state_metrics.json changed
-        git diff --cached --quiet || (git commit -m "Update state metrics from latest data" && git push)
+        git commit -m "Update state metrics from latest data" --allow-empty
+        git push
+
