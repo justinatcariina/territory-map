@@ -65,6 +65,8 @@ function renderMap(view) {
 
       return data?.score != null ? colorScale(data.score) : "#eee";
     })
+    .attr("stroke", "#000")
+    .attr("stroke-width", 1)
     .on("mouseover", (event, d) => {
       const fips = d.id.toString().padStart(2, "0");
       const code = fipsToState[fips];
