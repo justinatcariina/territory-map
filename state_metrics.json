@@ -1,410 +1,1226 @@
 {
   "AL": {
-    "calls": 159,
-    "connects": 5,
+    "calls": 42,
+    "connects": 0,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.1185
+    "score": 0.0,
+    "district": {
+      "calls": 23,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 19,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
   },
   "AR": {
-    "calls": 169,
-    "connects": 8,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1778
-  },
-  "AZ": {
-    "calls": 2022,
-    "connects": 72,
-    "customers": 1,
-    "discos": 3,
-    "deals": 0,
-    "score": 0.2519
-  },
-  "CA": {
-    "calls": 2119,
-    "connects": 83,
-    "customers": 4,
-    "discos": 2,
-    "deals": 0,
-    "score": 0.2148
-  },
-  "CENTRAL NY": {
-    "calls": 11,
-    "connects": 1,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.3333
-  },
-  "CO": {
-    "calls": 1209,
-    "connects": 40,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1259
-  },
-  "CT": {
-    "calls": 101,
-    "connects": 5,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1852
-  },
-  "DC": {
-    "calls": 195,
-    "connects": 7,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1333
-  },
-  "DE": {
-    "calls": 278,
+    "calls": 43,
     "connects": 3,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.037
+    "score": 0.0814,
+    "district": {
+      "calls": 16,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0721
+    },
+    "charter": {
+      "calls": 22,
+      "connects": 2,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1047
+    }
   },
-  "FL": {
-    "calls": 787,
-    "connects": 34,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.163
-  },
-  "GA": {
-    "calls": 760,
-    "connects": 38,
-    "customers": 0,
-    "discos": 3,
-    "deals": 0,
-    "score": 0.4222
-  },
-  "HI": {
-    "calls": 87,
-    "connects": 8,
-    "customers": 2,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.3407
-  },
-  "IA": {
-    "calls": 8,
-    "connects": 0,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0
-  },
-  "ID": {
-    "calls": 401,
-    "connects": 14,
-    "customers": 3,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.3407
-  },
-  "IL": {
-    "calls": 277,
-    "connects": 8,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1037
-  },
-  "IN": {
-    "calls": 117,
-    "connects": 8,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.2519
-  },
-  "KS": {
-    "calls": 392,
-    "connects": 36,
-    "customers": 0,
-    "discos": 3,
-    "deals": 0,
-    "score": 0.5852
-  },
-  "LA": {
-    "calls": 441,
-    "connects": 23,
-    "customers": 1,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1926
-  },
-  "MA": {
-    "calls": 431,
-    "connects": 13,
-    "customers": 0,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.3407
-  },
-  "MASSACHUSETTS": {
-    "calls": 6,
-    "connects": 0,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0
-  },
-  "MD": {
-    "calls": 206,
-    "connects": 12,
-    "customers": 0,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.4593
-  },
-  "ME": {
-    "calls": 87,
-    "connects": 1,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0444
-  },
-  "MI": {
-    "calls": 1047,
-    "connects": 60,
-    "customers": 0,
-    "discos": 16,
-    "deals": 0,
-    "score": 1.0
-  },
-  "MN": {
-    "calls": 652,
-    "connects": 35,
-    "customers": 1,
-    "discos": 2,
-    "deals": 0,
-    "score": 0.3704
-  },
-  "MO": {
-    "calls": 186,
-    "connects": 5,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0963
-  },
-  "MS": {
-    "calls": 13,
-    "connects": 0,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0
-  },
-  "MT": {
-    "calls": 11,
-    "connects": 1,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.3333
-  },
-  "NC": {
-    "calls": 597,
-    "connects": 28,
-    "customers": 0,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.2815
-  },
-  "NH": {
-    "calls": 155,
-    "connects": 14,
-    "customers": 1,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.3333
-  },
-  "NJ": {
-    "calls": 434,
+  "AZ": {
+    "calls": 615,
     "connects": 15,
     "customers": 1,
-    "discos": 0,
+    "discos": 3,
     "deals": 0,
-    "score": 0.1259
+    "score": 0.214,
+    "district": {
+      "calls": 506,
+      "connects": 8,
+      "customers": 1,
+      "discos": 3,
+      "deals": 0,
+      "score": 0.3674
+    },
+    "charter": {
+      "calls": 109,
+      "connects": 7,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0744
+    }
   },
-  "NM": {
-    "calls": 1501,
-    "connects": 70,
-    "customers": 8,
-    "discos": 4,
+  "CA": {
+    "calls": 355,
+    "connects": 16,
+    "customers": 2,
+    "discos": 2,
     "deals": 0,
-    "score": 0.3407
+    "score": 0.1698,
+    "district": {
+      "calls": 232,
+      "connects": 10,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.1442
+    },
+    "charter": {
+      "calls": 123,
+      "connects": 6,
+      "customers": 2,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.2116
+    }
   },
-  "NV": {
-    "calls": 262,
-    "connects": 9,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1259
-  },
-  "NY": {
-    "calls": 1500,
-    "connects": 64,
-    "customers": 1,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1556
-  },
-  "OH": {
-    "calls": 279,
-    "connects": 9,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.1185
-  },
-  "OK": {
-    "calls": 199,
-    "connects": 14,
-    "customers": 0,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.4741
-  },
-  "OR": {
-    "calls": 703,
-    "connects": 44,
-    "customers": 0,
-    "discos": 5,
-    "deals": 0,
-    "score": 0.5704
-  },
-  "PA": {
-    "calls": 1125,
-    "connects": 33,
-    "customers": 0,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.2
-  },
-  "PENNSYLVANIA": {
-    "calls": 6,
+  "CENTRAL NY": {
+    "calls": 1,
     "connects": 0,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.0
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
   },
-  "RI": {
-    "calls": 197,
-    "connects": 16,
+  "CO": {
+    "calls": 151,
+    "connects": 3,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.3037
+    "score": 0.0233,
+    "district": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 149,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0233
+    }
   },
-  "SC": {
-    "calls": 466,
-    "connects": 22,
+  "CT": {
+    "calls": 15,
+    "connects": 0,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.1778
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 15,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
   },
-  "TN": {
-    "calls": 574,
-    "connects": 17,
-    "customers": 1,
-    "discos": 1,
-    "deals": 0,
-    "score": 0.2815
-  },
-  "TX": {
-    "calls": 6506,
-    "connects": 221,
-    "customers": 4,
-    "discos": 21,
-    "deals": 0,
-    "score": 0.4074
-  },
-  "UT": {
-    "calls": 256,
-    "connects": 11,
+  "DC": {
+    "calls": 87,
+    "connects": 4,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.1556
+    "score": 0.0535,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 87,
+      "connects": 4,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0535
+    }
   },
-  "VA": {
-    "calls": 51,
+  "DE": {
+    "calls": 34,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0349,
+    "district": {
+      "calls": 27,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0442
+    },
+    "charter": {
+      "calls": 7,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "FL": {
+    "calls": 53,
     "connects": 2,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.1481
+    "score": 0.0442,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 51,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0233
+    }
   },
-  "WA": {
-    "calls": 145,
+  "GA": {
+    "calls": 194,
+    "connects": 12,
+    "customers": 0,
+    "discos": 3,
+    "deals": 0,
+    "score": 0.3047,
+    "district": {
+      "calls": 87,
+      "connects": 6,
+      "customers": 0,
+      "discos": 2,
+      "deals": 0,
+      "score": 0.3907
+    },
+    "charter": {
+      "calls": 107,
+      "connects": 6,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.2209
+    }
+  },
+  "HAWAII": {
+    "calls": 2,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "HI": {
+    "calls": 24,
+    "connects": 3,
+    "customers": 2,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.1442,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 24,
+      "connects": 3,
+      "customers": 2,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1442
+    }
+  },
+  "ID": {
+    "calls": 174,
+    "connects": 14,
+    "customers": 0,
+    "discos": 2,
+    "deals": 0,
+    "score": 0.2256,
+    "district": {
+      "calls": 146,
+      "connects": 14,
+      "customers": 0,
+      "discos": 2,
+      "deals": 0,
+      "score": 0.2442
+    },
+    "charter": {
+      "calls": 28,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "IL": {
+    "calls": 47,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0256,
+    "district": {
+      "calls": 41,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0279
+    },
+    "charter": {
+      "calls": 5,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "IN": {
+    "calls": 14,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 14,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "KS": {
+    "calls": 227,
+    "connects": 27,
+    "customers": 0,
+    "discos": 3,
+    "deals": 0,
+    "score": 0.2419,
+    "district": {
+      "calls": 227,
+      "connects": 27,
+      "customers": 0,
+      "discos": 3,
+      "deals": 0,
+      "score": 0.2419
+    },
+    "charter": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "LA": {
+    "calls": 6,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 6,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "MA": {
+    "calls": 44,
+    "connects": 3,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.3884,
+    "district": {
+      "calls": 3,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 41,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.086
+    }
+  },
+  "MD": {
+    "calls": 54,
+    "connects": 4,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.3186,
+    "district": {
+      "calls": 38,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0907
+    },
+    "charter": {
+      "calls": 15,
+      "connects": 1,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 1.007
+    }
+  },
+  "ME": {
+    "calls": 53,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 53,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "MI": {
+    "calls": 619,
+    "connects": 41,
+    "customers": 0,
+    "discos": 16,
+    "deals": 0,
+    "score": 0.4395,
+    "district": {
+      "calls": 607,
+      "connects": 40,
+      "customers": 0,
+      "discos": 16,
+      "deals": 0,
+      "score": 0.4488
+    },
+    "charter": {
+      "calls": 12,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0977
+    }
+  },
+  "MID HUDSON VALLEY": {
+    "calls": 2,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "MN": {
+    "calls": 196,
+    "connects": 14,
+    "customers": 0,
+    "discos": 2,
+    "deals": 0,
+    "score": 0.2163,
+    "district": {
+      "calls": 31,
+      "connects": 6,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.2256
+    },
+    "charter": {
+      "calls": 165,
+      "connects": 8,
+      "customers": 0,
+      "discos": 2,
+      "deals": 0,
+      "score": 0.2884
+    }
+  },
+  "MO": {
+    "calls": 26,
+    "connects": 3,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.1349,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 26,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1349
+    }
+  },
+  "MS": {
+    "calls": 3,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "NC": {
+    "calls": 127,
+    "connects": 6,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.2093,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 127,
+      "connects": 6,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.2093
+    }
+  },
+  "NEW YORK": {
+    "calls": 1,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "NH": {
+    "calls": 25,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0465,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 25,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0465
+    }
+  },
+  "NJ": {
+    "calls": 54,
+    "connects": 2,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0442,
+    "district": {
+      "calls": 36,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 18,
+      "connects": 2,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1302
+    }
+  },
+  "NM": {
+    "calls": 174,
+    "connects": 8,
+    "customers": 0,
+    "discos": 4,
+    "deals": 0,
+    "score": 0.5186,
+    "district": {
+      "calls": 172,
+      "connects": 8,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.1698
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 3,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "NORTH CAROLINA": {
+    "calls": 1,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "NV": {
+    "calls": 36,
+    "connects": 1,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0326,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 36,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0326
+    }
+  },
+  "NY": {
+    "calls": 226,
+    "connects": 12,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0628,
+    "district": {
+      "calls": 19,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1837
+    },
+    "charter": {
+      "calls": 192,
+      "connects": 7,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0419
+    }
+  },
+  "OH": {
+    "calls": 14,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 14,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "OK": {
+    "calls": 61,
+    "connects": 9,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.2744,
+    "district": {
+      "calls": 45,
+      "connects": 9,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.3349
+    },
+    "charter": {
+      "calls": 16,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "OR": {
+    "calls": 379,
+    "connects": 24,
+    "customers": 0,
+    "discos": 6,
+    "deals": 0,
+    "score": 0.307,
+    "district": {
+      "calls": 265,
+      "connects": 18,
+      "customers": 0,
+      "discos": 4,
+      "deals": 0,
+      "score": 0.286
+    },
+    "charter": {
+      "calls": 114,
+      "connects": 6,
+      "customers": 0,
+      "discos": 2,
+      "deals": 0,
+      "score": 0.3721
+    }
+  },
+  "PA": {
+    "calls": 129,
+    "connects": 4,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.2698,
+    "district": {
+      "calls": 27,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0442
+    },
+    "charter": {
+      "calls": 102,
+      "connects": 3,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.3442
+    }
+  },
+  "PENNSYLVANIA": {
+    "calls": 2,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "RHODE ISLAND": {
+    "calls": 1,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 1,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "SC": {
+    "calls": 39,
+    "connects": 2,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0605,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 39,
+      "connects": 2,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0605
+    }
+  },
+  "SOUTHERN TIER": {
+    "calls": 2,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "TN": {
+    "calls": 96,
+    "connects": 1,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.9419,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 96,
+      "connects": 1,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.9419
+    }
+  },
+  "TX": {
+    "calls": 2651,
+    "connects": 67,
+    "customers": 1,
+    "discos": 21,
+    "deals": 0,
+    "score": 0.3209,
+    "district": {
+      "calls": 2418,
+      "connects": 63,
+      "customers": 0,
+      "discos": 20,
+      "deals": 0,
+      "score": 0.3256
+    },
+    "charter": {
+      "calls": 233,
+      "connects": 4,
+      "customers": 1,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.2535
+    }
+  },
+  "UT": {
+    "calls": 149,
     "connects": 8,
     "customers": 0,
     "discos": 1,
     "deals": 0,
-    "score": 0.5778
+    "score": 0.1791,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 149,
+      "connects": 8,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.1791
+    }
   },
-  "WASHINGTON D.C.": {
+  "VA": {
+    "calls": 6,
+    "connects": 0,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 6,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
+  },
+  "WA": {
+    "calls": 81,
+    "connects": 4,
+    "customers": 0,
+    "discos": 1,
+    "deals": 0,
+    "score": 0.2907,
+    "district": {
+      "calls": 42,
+      "connects": 3,
+      "customers": 0,
+      "discos": 1,
+      "deals": 0,
+      "score": 0.393
+    },
+    "charter": {
+      "calls": 39,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0302
+    }
+  },
+  "WI": {
+    "calls": 58,
+    "connects": 2,
+    "customers": 0,
+    "discos": 0,
+    "deals": 0,
+    "score": 0.0395,
+    "district": {
+      "calls": 32,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0372
+    },
+    "charter": {
+      "calls": 26,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0442
+    }
+  },
+  "WY": {
     "calls": 7,
     "connects": 0,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.0
-  },
-  "WI": {
-    "calls": 186,
-    "connects": 5,
-    "customers": 1,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0963
-  },
-  "WV": {
-    "calls": 9,
-    "connects": 2,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.8222
-  },
-  "WY": {
-    "calls": 28,
-    "connects": 0,
-    "customers": 0,
-    "discos": 0,
-    "deals": 0,
-    "score": 0.0
+    "score": 0.0,
+    "district": {
+      "calls": 5,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 2,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
   },
   "(NO VALUE)": {
-    "calls": 263,
-    "connects": 15,
+    "calls": 50,
+    "connects": 3,
     "customers": 0,
     "discos": 3,
     "deals": 0,
-    "score": 0.8074
+    "score": 1.0,
+    "district": {
+      "calls": 18,
+      "connects": 0,
+      "customers": 0,
+      "discos": 3,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 32,
+      "connects": 3,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.1093
+    }
   },
-  "SAN JUAN": {
+  "WV": {
     "calls": 0,
     "connects": 1,
     "customers": 0,
     "discos": 0,
     "deals": 0,
-    "score": 0.0
+    "score": 0.0,
+    "district": {
+      "calls": 0,
+      "connects": 0,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    },
+    "charter": {
+      "calls": 0,
+      "connects": 1,
+      "customers": 0,
+      "discos": 0,
+      "deals": 0,
+      "score": 0.0
+    }
   }
 }

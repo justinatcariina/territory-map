@@ -19,7 +19,6 @@ calls_df = pd.read_csv(os.path.join(data_dir, "calls.csv"))
 connects_df = pd.read_csv(os.path.join(data_dir, "connects.csv"))
 customers_df = pd.read_csv(os.path.join(data_dir, "customers.csv"))
 discos_df = pd.read_csv(os.path.join(data_dir, "discos.csv"))
-deals_df = pd.read_csv(os.path.join(data_dir, "deals.csv")) if os.path.exists(os.path.join(data_dir, "deals.csv")) else pd.DataFrame()
 
 def clean_state(state):
     return state.strip().upper()
@@ -44,8 +43,8 @@ def assign_school_type(role):
 def update_activity(df, key):
     for _, row in df.iterrows():
         state = clean_state(row["State/Region"])
-        count = int(row.iloc[1])
-        rep = row.iloc[2].strip()
+        count = int(row["Count of Calls"])  # or "Count of Deals" depending on file
+        rep = row["Activity assigned to"].strip()
         school_type = assign_school_type(rep)
 
         state_metrics[state][key] += count
@@ -56,8 +55,8 @@ def update_activity(df, key):
 def update_deal_file(df, key):
     for _, row in df.iterrows():
         state = clean_state(row["State/Region"])
-        count = int(row.iloc[1])
-        school_type = row.iloc[2].strip().lower()
+        count = int(row["Count of Deals"])  # explicit column name
+        school_type = row["School Type"].strip().lower()
         school_type = school_type if school_type in {"charter", "district"} else None
 
         state_metrics[state][key] += count
@@ -69,9 +68,6 @@ update_activity(calls_df, "calls")
 update_activity(connects_df, "connects")
 update_deal_file(customers_df, "customers")
 update_deal_file(discos_df, "discos")
-
-if not deals_df.empty:
-    update_deal_file(deals_df, "deals")
 
 # ---- Score calculation (weighted average) for both aggregate and subtypes
 def compute_score(metrics):
