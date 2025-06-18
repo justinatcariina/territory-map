@@ -52,8 +52,8 @@
     "connects": 15,
     "customers": 1,
     "discos": 3,
-    "deals": 0,
-    "score": 0.214,
+    "deals": 1,
+    "score": 0.293,
     "district": {
       "calls": 506,
       "connects": 8,
@@ -69,15 +69,22 @@
       "discos": 0,
       "deals": 0,
       "score": 0.0744
-    }
+    },
+    "deal_list": [
+      {
+        "name": "Ganado Unified School District - AZ",
+        "amount": 20000,
+        "contacts": "Leandra Thomas"
+      }
+    ]
   },
   "CA": {
     "calls": 355,
     "connects": 16,
     "customers": 2,
     "discos": 2,
-    "deals": 0,
-    "score": 0.1698,
+    "deals": 2,
+    "score": 0.4023,
     "district": {
       "calls": 232,
       "connects": 10,
@@ -93,7 +100,19 @@
       "discos": 1,
       "deals": 0,
       "score": 0.2116
-    }
+    },
+    "deal_list": [
+      {
+        "name": "Albert Einstein Academies - CA",
+        "amount": 36000,
+        "contacts": "Dr. Sciarretta David Sciarretta; Brad Baquial"
+      },
+      {
+        "name": "River Valley Charter School - CA",
+        "amount": 15000,
+        "contacts": "Brooke Faigin; Seth Phelps"
+      }
+    ]
   },
   "CENTRAL NY": {
     "calls": 1,
@@ -292,7 +311,7 @@
     "connects": 3,
     "customers": 2,
     "discos": 0,
-    "deals": 0,
+    "deals": 2,
     "score": 0.1442,
     "district": {
       "calls": 0,
@@ -309,7 +328,19 @@
       "discos": 0,
       "deals": 0,
       "score": 0.1442
-    }
+    },
+    "deal_list": [
+      {
+        "name": "Malama Honua Charter School - HI",
+        "amount": 12000,
+        "contacts": "Denise Espania"
+      },
+      {
+        "name": "SEEQS: the School for Examining Essential Questions of Sustainability - HI",
+        "amount": 12000,
+        "contacts": "Buffy Cushman-Patz"
+      }
+    ]
   },
   "ID": {
     "calls": 174,
@@ -1036,8 +1067,8 @@
     "connects": 67,
     "customers": 1,
     "discos": 21,
-    "deals": 0,
-    "score": 0.3209,
+    "deals": 1,
+    "score": 0.3326,
     "district": {
       "calls": 2418,
       "connects": 63,
@@ -1053,7 +1084,14 @@
       "discos": 1,
       "deals": 0,
       "score": 0.2535
-    }
+    },
+    "deal_list": [
+      {
+        "name": "Draw Academy - TX",
+        "amount": 10291,
+        "contacts": "Fernanda Soto"
+      }
+    ]
   },
   "UT": {
     "calls": 149,
