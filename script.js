@@ -49,7 +49,7 @@ Promise.all([
       const m = metrics[stateCode];
       return m ? colorScale(m.score) : "#eee";
     })
-    .attr("stroke", "#fff")
+    .attr("stroke", "#000")
     .on("mouseover", (event, d) => {
       const fips = d.id.toString().padStart(2, "0");
       const code = fipsToState[fips];
