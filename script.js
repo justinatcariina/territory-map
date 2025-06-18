@@ -92,7 +92,7 @@ function renderMap(view) {
           <strong>Closed Deals: ${deals.length}</strong><br>
           ${deals.map(deal => `
             <div style="margin-top: 4px">
-              <em>${deal.deal_name}</em><br>
+              <em>${deal.name}</em><br>
               Amount: $${deal.amount.toLocaleString()}<br>
               Contacts: ${deal.contacts}
             </div>
