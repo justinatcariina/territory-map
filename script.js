@@ -35,8 +35,8 @@ Promise.all([
   states = topojson.feature(us, us.objects.states).features;
 
   renderMap(currentView);
+  renderLegend();
 
-  // View toggle event listeners
   document.querySelectorAll("#view-toggle button").forEach(button => {
     button.addEventListener("click", () => {
       currentView = button.dataset.view;
@@ -65,7 +65,6 @@ function renderMap(view) {
 
       return data?.score != null ? colorScale(data.score) : "#eee";
     })
-    .attr("stroke", "#000")
     .on("mouseover", (event, d) => {
       const fips = d.id.toString().padStart(2, "0");
       const code = fipsToState[fips];
@@ -85,10 +84,28 @@ function renderMap(view) {
           Connect Rate: ${safeRate(data?.connects, data?.calls)}<br>
           Book Rate: ${safeRate(data?.discos, data?.connects)}<br>
           Close Rate: ${safeRate(data?.customers, data?.discos)}<br>
-          Score: ${data?.score ?? "N/A"}
+          Score: ${((data?.score ?? 0) * 100).toFixed(1)}%
         `)
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 40) + "px");
     })
     .on("mouseout", () => tooltip.style("display", "none"));
+}
+
+function renderLegend() {
+  const legendContainer = d3.select("#legend");
+  legendContainer.html(""); // clear old
+
+  const thresholds = colorScale.domain();
+  const colors = colorScale.range();
+
+  const steps = [0, ...thresholds, 1];
+  for (let i = 0; i < steps.length - 1; i++) {
+    legendContainer.append("div")
+      .attr("class", "legend-item")
+      .html(`
+        <div class="legend-color" style="background:${colors[i]}"></div>
+        <div>${Math.round(steps[i] * 100)}–${Math.round(steps[i + 1] * 100)}%</div>
+      `);
+  }
 }
