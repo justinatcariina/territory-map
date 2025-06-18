@@ -26,8 +26,6 @@ body {
 }
 
 svg path {
-  stroke: #fff;
-  stroke-width: 0.5;
   transition: fill 0.3s ease;
 }
 
