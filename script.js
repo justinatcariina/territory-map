@@ -1,19 +1,11 @@
 const svg = d3.select("#map");
 const tooltip = d3.select("#tooltip");
 
-// Use a sequential color scale for smooth gradient
 const colorScale = d3.scaleThreshold()
   .domain([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8])
   .range([
-    "#f7fbff",
-    "#deebf7",
-    "#c6dbef",
-    "#9ecae1",
-    "#6baed6",
-    "#4292c6",
-    "#2171b5",
-    "#084594",
-    "#08306b"
+    "#f7fbff", "#deebf7", "#c6dbef", "#9ecae1",
+    "#6baed6", "#4292c6", "#2171b5", "#084594", "#08306b"
   ]);
 
 const fipsToState = {
@@ -29,14 +21,32 @@ const fipsToState = {
   "50": "VT", "51": "VA", "53": "WA", "54": "WV", "55": "WI", "56": "WY"
 };
 
+let currentView = "aggregate";
+let states, metrics;
+
+const projection = d3.geoAlbersUsa().scale(1000).translate([480, 300]);
+const path = d3.geoPath().projection(projection);
+
 Promise.all([
   d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json"),
   d3.json("state_metrics.json")
-]).then(([us, metrics]) => {
-  const states = topojson.feature(us, us.objects.states).features;
+]).then(([us, loadedMetrics]) => {
+  metrics = loadedMetrics;
+  states = topojson.feature(us, us.objects.states).features;
 
-  const projection = d3.geoAlbersUsa().scale(1000).translate([480, 300]);
-  const path = d3.geoPath().projection(projection);
+  renderMap(currentView);
+
+  // View toggle event listeners
+  document.querySelectorAll("#view-toggle button").forEach(button => {
+    button.addEventListener("click", () => {
+      currentView = button.dataset.view;
+      renderMap(currentView);
+    });
+  });
+});
+
+function renderMap(view) {
+  svg.selectAll("g").remove();
 
   svg.append("g")
     .selectAll("path")
@@ -45,9 +55,15 @@ Promise.all([
     .attr("d", path)
     .attr("fill", d => {
       const fips = d.id.toString().padStart(2, "0");
-      const stateCode = fipsToState[fips];
-      const m = metrics[stateCode];
-      return m ? colorScale(m.score) : "#eee";
+      const code = fipsToState[fips];
+      const m = metrics[code];
+      if (!m) return "#eee";
+
+      const data = view === "district" ? m.district
+                  : view === "charter" ? m.charter
+                  : m;
+
+      return data?.score != null ? colorScale(data.score) : "#eee";
     })
     .attr("stroke", "#000")
     .on("mouseover", (event, d) => {
@@ -56,18 +72,23 @@ Promise.all([
       const m = metrics[code];
       if (!m) return;
 
+      const data = view === "district" ? m.district
+                  : view === "charter" ? m.charter
+                  : m;
+
       const safeRate = (num, denom) => denom ? (num / denom * 100).toFixed(1) + "%" : "N/A";
 
       tooltip.style("display", "block")
-      .html(`
+        .html(`
           <strong>${code}</strong><br>
-          Connect Rate: ${safeRate(m.connects, m.calls)}<br>
-          Book Rate: ${safeRate(m.discos, m.connects)}<br>
-          Close Rate: ${safeRate(m.customers, m.discos)}<br>
-          Score: ${m.score}
-      `)
+          # of Calls: ${data?.calls ?? 0}<br>
+          Connect Rate: ${safeRate(data?.connects, data?.calls)}<br>
+          Book Rate: ${safeRate(data?.discos, data?.connects)}<br>
+          Close Rate: ${safeRate(data?.customers, data?.discos)}<br>
+          Score: ${data?.score ?? "N/A"}
+        `)
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 40) + "px");
     })
     .on("mouseout", () => tooltip.style("display", "none"));
-});
+}

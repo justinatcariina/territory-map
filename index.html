@@ -7,8 +7,14 @@
   <script src="https://unpkg.com/topojson@3"></script>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1>Territory Traction Tracker</h1>
+  <div id="view-toggle">
+  <button data-view="aggregate">Aggregate</button>
+  <button data-view="district">District</button>
+  <button data-view="charter">Charter</button>
+  </div>
   <svg id="map" width="960" height="600"></svg>
   <div id="tooltip" class="tooltip" style="display:none;"></div>
   <script src="script.js"></script>

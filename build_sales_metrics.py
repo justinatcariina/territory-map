@@ -1,61 +1,110 @@
 import pandas as pd
 import json
 import os
+from collections import defaultdict
+
+# Role → School Type map
+district_reps = {
+    "Owen Bergan", "Peter Cahill", "Madyson Moy", "Katheryn Pearl",
+    "Jack Carroll", "Kory Medici", "Jessica Mitchell", "J.P. Milbury",
+    "Myles Stephenson", "Pat Chatfield"
+}
+charter_reps = {
+    "Youssef Baba", "Nevin Ketchum", "Abby Mondello", "Michael Bollas",
+    "Francis Rose", "Rhett Somers", "Ailish Maheras"
+}
 
 data_dir = "data"
-calls = pd.read_csv(os.path.join(data_dir, "calls.csv"))
-connects = pd.read_csv(os.path.join(data_dir, "connects.csv"))
-customers = pd.read_csv(os.path.join(data_dir, "customers.csv"))
-discos = pd.read_csv(os.path.join(data_dir, "discos.csv"))
+calls_df = pd.read_csv(os.path.join(data_dir, "calls.csv"))
+connects_df = pd.read_csv(os.path.join(data_dir, "connects.csv"))
+customers_df = pd.read_csv(os.path.join(data_dir, "customers.csv"))
+discos_df = pd.read_csv(os.path.join(data_dir, "discos.csv"))
+deals_df = pd.read_csv(os.path.join(data_dir, "deals.csv")) if os.path.exists(os.path.join(data_dir, "deals.csv")) else pd.DataFrame()
 
-state_metrics = {}
+def clean_state(state):
+    return state.strip().upper()
 
-def update(df, key):
+# Initialize metrics dict
+state_metrics = defaultdict(lambda: {
+    "calls": 0, "connects": 0, "customers": 0, "discos": 0, "deals": 0, "score": 0,
+    "district": {"calls": 0, "connects": 0, "customers": 0, "discos": 0, "deals": 0, "score": 0},
+    "charter": {"calls": 0, "connects": 0, "customers": 0, "discos": 0, "deals": 0, "score": 0}
+})
+
+# ---- Helper to assign counts based on rep or type
+def assign_school_type(role):
+    if role in district_reps:
+        return "district"
+    elif role in charter_reps:
+        return "charter"
+    else:
+        return None
+
+# ---- Update from activity-based (calls + connects)
+def update_activity(df, key):
     for _, row in df.iterrows():
-        state = row["State/Region"].strip().upper()
-        count = int(row[1])
-        if state not in state_metrics:
-            state_metrics[state] = {"calls": 0, "connects": 0, "customers": 0, "discos": 0, "deals": 0}
+        state = clean_state(row["State/Region"])
+        count = int(row.iloc[1])
+        rep = row.iloc[2].strip()
+        school_type = assign_school_type(rep)
+
         state_metrics[state][key] += count
+        if school_type:
+            state_metrics[state][school_type][key] += count
 
-update(calls, "calls")
-update(connects, "connects")
-update(customers, "customers")
-update(discos, "discos")
+# ---- Update from deal-based (discos + customers)
+def update_deal_file(df, key):
+    for _, row in df.iterrows():
+        state = clean_state(row["State/Region"])
+        count = int(row.iloc[1])
+        school_type = row.iloc[2].strip().lower()
+        school_type = school_type if school_type in {"charter", "district"} else None
 
-# Suppose you have a deals.csv with deals count by state? If not, you can add deals to discos or hardcode 0
-deals = pd.read_csv(os.path.join(data_dir, "deals.csv")) if os.path.exists(os.path.join(data_dir, "deals.csv")) else None
-if deals is not None:
-    update(deals, "deals")
-else:
-    # if no deals file, set deals = 0 to avoid KeyError
-    for s in state_metrics:
-        state_metrics[s]["deals"] = 0
+        state_metrics[state][key] += count
+        if school_type:
+            state_metrics[state][school_type][key] += count
 
-# Calculate new score:
-for s, d in state_metrics.items():
-    calls = d["calls"]
-    connects = d["connects"]
-    discos = d["discos"]
-    deals = d.get("deals", 0)
+# Run all updates
+update_activity(calls_df, "calls")
+update_activity(connects_df, "connects")
+update_deal_file(customers_df, "customers")
+update_deal_file(discos_df, "discos")
+
+if not deals_df.empty:
+    update_deal_file(deals_df, "deals")
+
+# ---- Score calculation (weighted average) for both aggregate and subtypes
+def compute_score(metrics):
+    calls = metrics["calls"]
+    connects = metrics["connects"]
+    discos = metrics["discos"]
+    deals = metrics.get("deals", 0)
 
     connect_rate = connects / calls if calls else 0
     book_rate = discos / connects if connects else 0
     deal_rate = deals / discos if discos else 0
 
-    # weights (adjust as you want)
-    w_connect = 0.5
-    w_book = 0.4
-    w_deal = 0.1
+    w_connect, w_book, w_deal = 0.5, 0.4, 0.1
+    return round((connect_rate * w_connect) + (book_rate * w_book) + (deal_rate * w_deal), 3)
 
-    score = (connect_rate * w_connect) + (book_rate * w_book) + (deal_rate * w_deal)
-    d["score_raw"] = round(score, 3)
+# Compute raw scores
+max_score = 0
+for s in state_metrics:
+    state_metrics[s]["score_raw"] = compute_score(state_metrics[s])
+    state_metrics[s]["district"]["score_raw"] = compute_score(state_metrics[s]["district"])
+    state_metrics[s]["charter"]["score_raw"] = compute_score(state_metrics[s]["charter"])
+    max_score = max(max_score, state_metrics[s]["score_raw"])
 
-# Normalize scores to range 0–1
-max_score = max(d["score_raw"] for d in state_metrics.values())
-for d in state_metrics.values():
-    d["score"] = round(d["score_raw"] / max_score, 4)
+# Normalize scores to [0, 1]
+for s in state_metrics:
+    d = state_metrics[s]
+    d["score"] = round(d["score_raw"] / max_score, 4) if max_score else 0
+    d["district"]["score"] = round(d["district"]["score_raw"] / max_score, 4) if max_score else 0
+    d["charter"]["score"] = round(d["charter"]["score_raw"] / max_score, 4) if max_score else 0
     del d["score_raw"]
+    del d["district"]["score_raw"]
+    del d["charter"]["score_raw"]
 
+# ---- Write to JSON
 with open("state_metrics.json", "w") as f:
     json.dump(state_metrics, f, indent=2)
