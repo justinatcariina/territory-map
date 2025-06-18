@@ -29,7 +29,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run metrics script
-        run: python territory-map/build_metrics.py
+        run: python .github/build_metrics.py
 
       - name: Commit and push updated JSON
         run: |
