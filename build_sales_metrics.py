@@ -19,6 +19,12 @@ calls_df = pd.read_csv(os.path.join(data_dir, "calls.csv"))
 connects_df = pd.read_csv(os.path.join(data_dir, "connects.csv"))
 customers_df = pd.read_csv(os.path.join(data_dir, "customers.csv"))
 discos_df = pd.read_csv(os.path.join(data_dir, "discos.csv"))
+deals_path = os.path.join(data_dir, "deals.csv")
+
+if os.path.exists(deals_path):
+    deals_df = pd.read_csv(deals_path)
+else:
+    deals_df = pd.DataFrame(columns=["Company State", "Deal Name", "Amount in company currency", "Associated Contacts"])
 
 def clean_state(state):
     return state.strip().upper()
@@ -68,6 +74,17 @@ update_activity(calls_df, "calls")
 update_activity(connects_df, "connects")
 update_deal_file(customers_df, "customers")
 update_deal_file(discos_df, "discos")
+
+# Add per-state deal info
+for _, row in deals_df.iterrows():
+    state = clean_state(row["Company State"])
+    deal_info = {
+        "name": row["Deal Name"],
+        "amount": row["Amount in company currency"],
+        "contacts": row["Associated Contacts"]
+    }
+    state_metrics[state]["deals"] += 1
+    state_metrics[state].setdefault("deal_list", []).append(deal_info)
 
 # ---- Score calculation (weighted average) for both aggregate and subtypes
 def compute_score(metrics):

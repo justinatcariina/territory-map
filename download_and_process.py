@@ -18,14 +18,16 @@ REPORT_SUBJECTS = [
     "Calls by State",
     "Discos Scheduled by State",
     "Closed Won by State",
-    "Connects by State"
+    "Connects by State",
+    "Deals by Name"
 ]
 
 REPORT_FILENAME_MAP = {
     "Calls by State": "calls.csv",
     "Discos Scheduled by State": "discos.csv",
     "Closed Won by State": "customers.csv",
-    "Connects by State": "connects.csv"
+    "Connects by State": "connects.csv",
+    "Deals by Name": "deals.csv"
 }
 
 def authenticate_gmail():
@@ -134,6 +136,18 @@ def download_and_extract_zip(signed_url, extract_to, expected_csv_name):
         print(f"Extracted {expected_csv_name}")
         return True
 
+def download_and_save_csv(signed_url, output_path):
+    resp = requests.get(signed_url)
+    if resp.status_code != 200:
+        print(f"Error downloading CSV: {resp.status_code}")
+        return False
+
+    with open(output_path, "wb") as f:
+        f.write(resp.content)
+
+    print(f"Saved CSV to {output_path}")
+    return True
+
 
 def main():
     if not HUBSPOT_ACCESS_TOKEN:
@@ -153,7 +167,10 @@ def main():
             if not signed_url:
                 continue
             expected_csv_name = REPORT_FILENAME_MAP[subject]
-            download_and_extract_zip(signed_url, DATA_DIR, expected_csv_name)
+            if subject == "Deals by Name":
+                download_and_save_csv(signed_url, os.path.join(DATA_DIR, expected_csv_name))
+            else:
+                download_and_extract_zip(signed_url, DATA_DIR, expected_csv_name)
 
     print("Running build_sales_metrics.py...")
     os.system("python build_sales_metrics.py")

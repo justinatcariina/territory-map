@@ -7,6 +7,12 @@ const colorScale = d3.scaleThreshold()
     "#f7fbff", "#deebf7", "#c6dbef", "#9ecae1",
     "#6baed6", "#4292c6", "#2171b5", "#084594", "#08306b"
   ]);
+const dealColorScale = d3.scaleThreshold()
+  .domain([1, 2, 3, 5, 8, 12, 20])
+  .range([
+    "#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8",
+    "#807dba", "#6a51a3", "#4a1486", "#2c004a"
+  ]);
 
 const fipsToState = {
   "01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA",
@@ -59,6 +65,11 @@ function renderMap(view) {
       const m = metrics[code];
       if (!m) return "#eee";
 
+      if (view === "deals") {
+        const dealCount = (m.deal_list || []).length;
+        return dealCount ? dealColorScale(dealCount) : "#eee";
+      }
+
       const data = view === "district" ? m.district
                   : view === "charter" ? m.charter
                   : m;
@@ -68,46 +79,70 @@ function renderMap(view) {
     .attr("stroke", "#000")
     .attr("stroke-width", 1)
     .on("mouseover", (event, d) => {
-      const fips = d.id.toString().padStart(2, "0");
-      const code = fipsToState[fips];
-      const m = metrics[code];
-      if (!m) return;
+    const fips = d.id.toString().padStart(2, "0");
+    const code = fipsToState[fips];
+    const m = metrics[code];
+    if (!m) return;
 
-      const data = view === "district" ? m.district
-                  : view === "charter" ? m.charter
-                  : m;
-
-      const safeRate = (num, denom) => denom ? (num / denom * 100).toFixed(1) + "%" : "N/A";
-
+    if (view === "deals") {
+      const deals = m.deal_list || [];
       tooltip.style("display", "block")
         .html(`
           <strong>${code}</strong><br>
-          # of Calls: ${data?.calls ?? 0}<br>
-          Connect Rate: ${safeRate(data?.connects, data?.calls)}<br>
-          Book Rate: ${safeRate(data?.discos, data?.connects)}<br>
-          Close Rate: ${safeRate(data?.customers, data?.discos)}<br>
-          Score: ${((data?.score ?? 0) * 100).toFixed(1)}%
+          <strong>Closed Deals: ${deals.length}</strong><br>
+          ${deals.map(deal => `
+            <div style="margin-top: 4px">
+              <em>${deal.deal_name}</em><br>
+              Amount: $${deal.amount.toLocaleString()}<br>
+              Contacts: ${deal.contacts}
+            </div>
+          `).join("<hr style='margin:4px 0;'>")}
         `)
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 40) + "px");
-    })
-    .on("mouseout", () => tooltip.style("display", "none"));
+      return;
+    }
+
+    const data = view === "district" ? m.district
+                : view === "charter" ? m.charter
+                : m;
+
+    const safeRate = (num, denom) => denom ? (num / denom * 100).toFixed(1) + "%" : "N/A";
+
+    tooltip.style("display", "block")
+      .html(`
+        <strong>${code}</strong><br>
+        # of Calls: ${data?.calls ?? 0}<br>
+        Connect Rate: ${safeRate(data?.connects, data?.calls)}<br>
+        Book Rate: ${safeRate(data?.discos, data?.connects)}<br>
+        Close Rate: ${safeRate(data?.customers, data?.discos)}<br>
+        Score: ${((data?.score ?? 0) * 100).toFixed(1)}%
+      `)
+      .style("left", (event.pageX + 10) + "px")
+      .style("top", (event.pageY - 40) + "px");
+  })
+  renderLegend();
 }
 
 function renderLegend() {
   const legendContainer = d3.select("#legend");
   legendContainer.html(""); // clear old
 
-  const thresholds = colorScale.domain();
-  const colors = colorScale.range();
+  const isDeals = currentView === "deals";
+  const thresholds = isDeals ? dealColorScale.domain() : colorScale.domain();
+  const colors = isDeals ? dealColorScale.range() : colorScale.range();
 
-  const steps = [0, ...thresholds, 1];
+  const steps = isDeals ? [0, ...thresholds, Infinity] : [0, ...thresholds, 1];
   for (let i = 0; i < steps.length - 1; i++) {
+    const rangeLabel = isDeals
+      ? `${steps[i]}–${steps[i + 1] === Infinity ? "+" : steps[i + 1]}`
+      : `${Math.round(steps[i] * 100)}–${Math.round(steps[i + 1] * 100)}%`;
+
     legendContainer.append("div")
       .attr("class", "legend-item")
       .html(`
         <div class="legend-color" style="background:${colors[i]}"></div>
-        <div>${Math.round(steps[i] * 100)}–${Math.round(steps[i + 1] * 100)}%</div>
+        <div>${rangeLabel}</div>
       `);
   }
 }
