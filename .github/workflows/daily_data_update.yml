@@ -2,7 +2,8 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: "0 13 * * *"  # runs daily at 9AM ET
+    - cron: "0 14 * * *"  # Covers 10 AM EDT
+    - cron: "0 15 * * *"  # Covers 10 AM EST
   workflow_dispatch:      # allows manual trigger from GitHub UI
 
 jobs:
